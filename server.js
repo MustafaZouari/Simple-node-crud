@@ -3,6 +3,8 @@ const express = require("express");
 
 const mongoose = require("mongoose");
 const productsRoute = require("./routes/product.route");
+const authRoutes = require("./routes/auth.route");
+const userRoutes = require("./routes/user.route");
 
 dotenv.config({ path: ".env" });
 
@@ -28,3 +30,6 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/products", productsRoute);
+app.use("/api/auth", authRoutes);
+
+app.use("/api/user", userRoutes);
